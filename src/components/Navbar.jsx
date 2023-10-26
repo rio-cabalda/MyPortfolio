@@ -36,7 +36,7 @@ const Navbar = () => {
     }
 
   return (
-    <motion.header className="fixed w-full z-20 backdrop-blur-sm">
+    <motion.header  className="fixed w-full z-50 bg-gradient-to-b from-white to-transparent dark:bg-gradient-to-b dark:from-black dark:to-transparent">
         <nav className={`flex items-center justify-between w-full px-8 py-4 gap-5 dark:text-white duration-300`}>
             <div>
                 <motion.h2 
