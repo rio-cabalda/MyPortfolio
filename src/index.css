@@ -17,4 +17,23 @@
     section {
       scroll-snap-align: start;
     }
+    @keyframes marqueeAnimation {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+    
+    /* Define the animation class */
+    .animate-marquee {
+      animation: marqueeAnimation 15s linear infinite; /* Adjust duration as needed */
+    }
+    .customClipPath {
+      clip-path: polygon(0 0, 100% 0, 100% 77%, 0% 100%);
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+    }
 }

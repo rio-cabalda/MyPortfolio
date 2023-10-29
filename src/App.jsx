@@ -12,6 +12,19 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const {theme} = useGlobalState();
+  
+  useEffect(()=>{
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth', // Smooth scrolling animation
+        });
+      };
+    scrollToTop();
+  },
+  //eslint-disable-next-line
+  []);
+
 
   useEffect(()=>{
     if(theme === 'dark'){
@@ -25,17 +38,14 @@ function App() {
 
 
   return (
-    <main className="font-custom-fontFamily text-[#363434] min-h-screen duration-300">
+    <main className="font-custom-fontFamily text-[#272525] min-h-screen duration-300">
       <ToastContainer position="top-center" />
-      <Navbar />
-      {/* <div className="min-h-screen"> */}
+          <Navbar />
           <Hero />
           <About />
           <MyProjects />
           <Skills />
-          <Contact />
-      {/* </div> */}
-        
+          <Contact /> 
     </main>
   )
 }

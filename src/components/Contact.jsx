@@ -18,11 +18,20 @@ const variants = {
   initial: {opacity: 0, y: 100},
   animate: {opacity: 1, y: 0,
     transition: {
-      duration: 1,
-      staggerChildren: 0.5,
+      duration: 0.5,
+      staggerChildren: 0.3,
     }}
 }
 
+const pathVariants = {
+  initial:{pathLength: 0},
+  animate:{ pathLength: 1,
+    transition:{
+      duration:3,
+    }
+  }
+}
+  console.log(isInView);
 const sendEmail = (e) => {
   e.preventDefault();
   setIsLoading(true);
@@ -41,49 +50,49 @@ const sendEmail = (e) => {
 
   return (
     <section id="contact" ref={ref} className="px-4 w-full min-h-screen flex items-center dark:text-white  bg-gradient-to-br from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200">
-      <div className="max-w-custom mx-auto w-full h-full grid grid-cols-2">
-        <motion.div initial="initial" whileInView="animate" variants={variants} className="w-full h-full leading-none flex flex-col gap-10">
-          <motion.h1 variants={variants} className="text-[6rem] font-bold py-5 text-orange-400">Let&apos;s work <br />together</motion.h1>
+      <div className="max-w-custom mx-auto w-full h-full grid grid-cols-1 lg:grid-cols-2">
+        <motion.div initial="initial" whileInView="animate" variants={variants} className="w-full h-full leading-none flex flex-col gap-5 lg:gap-10 text-center lg:text-left py-5">
+          <motion.h1 variants={variants} className="text-5xl lg:text-8xl font-bold text-orange-400">Let&apos;s work <br />together</motion.h1>
           <div>
-            <motion.h2 variants={variants} className="text-2xl font-bold">EMail</motion.h2>
-            <motion.p  variants={variants}className="text-lg font-semibold">riojoycabalda14@gmail.com</motion.p>
+            <motion.h2 variants={variants} className="text-lg lg:text-2xl font-bold">Email</motion.h2>
+            <motion.p  variants={variants}className="text-base lg:text-lg font-semibold">riojoycabalda14@gmail.com</motion.p>
           </div>
           <div>
-            <motion.h2 variants={variants} className="text-2xl font-bold">Address</motion.h2>
-            <motion.p  variants={variants}className="text-lg font-semibold">Brgy. Aplaya, Digos City,<br />Davao del Sur, Philippines</motion.p>
+            <motion.h2 variants={variants} className="text-lg lg:text-2xl font-bold">Address</motion.h2>
+            <motion.p  variants={variants}className="text-base lg:text-lg font-semibold">Brgy. Aplaya, Digos City,<br />Davao del Sur, Philippines</motion.p>
           </div>
           <div>
-            <motion.h2 variants={variants} className="text-2xl font-bold">Phone</motion.h2>
-            <motion.p  variants={variants}className="text-lg font-semibold">+6394-6262-6886</motion.p>
+            <motion.h2 variants={variants} className="text-lg lg:text-2xl font-bold">Phone</motion.h2>
+            <motion.p  variants={variants}className="text-base lg:text-lg font-semibold">+6394-6262-6886</motion.p>
           </div>
         </motion.div>
-        <div className="relative w-full flex items-center">
+        <div className="pb-16 lg:pb-0 relative w-full flex justify-center lg:justify-start items-center">
         <motion.form
             ref={formRef}
             onSubmit={sendEmail}
             initial={{ opacity: 0, }}
             whileInView={{ opacity: 1}}
             transition={{ delay: 4, duration: 1 }}
-            className='flex flex-col flex-1 gap-5 relative z-20 text-black dark:text-white'
+            className='max-w-[90%] md:max-w-[50%] lg:max-w-full flex flex-col flex-1 gap-5 relative z-20 text-black dark:text-white text-sm lg:text-base '
           >
-            <input type="text" value={name} onChange={(e)=>setName(e.value)} className='p-5 bg-transparent border-2 border-slate-700 dark:border-slate-300 rounded-md outline-none placeholder:text-slate-900 dark:placeholder:text-slate-300' required placeholder="Name" name="name"/>
-            <input type="email" value={email} onChange={(e)=>setEmail(e.value)} className='p-5 bg-transparent border-2 border-slate-700 dark:border-slate-300 rounded-md outline-none placeholder:text-slate-900 dark:placeholder:text-slate-300' required placeholder="Email" name="email"/>
-            <textarea rows={8} value={text} onChange={(e)=>setText(e.value)} className='p-5 bg-transparent border-2 border-slate-700 dark:border-slate-300 rounded-md outline-none placeholder:text-slate-900 dark:placeholder:text-slate-300' placeholder="Message" name="message"/>
-            <button disabled={isLoading} className='bg-orange-400 active:bg-orange-400 hover:bg-orange-500 disabled:bg-slate-600 rounded-md flex-1 p-5'>{isLoading? "Submitting...": "Submit"}</button>
+            <input type="text" value={name} onChange={(e)=>setName(e.value)} className='p-2 lg:p-5 bg-transparent border-2 border-slate-700 dark:border-slate-300 rounded-md outline-none placeholder:text-slate-900 dark:placeholder:text-slate-300' required placeholder="Name" name="name"/>
+            <input type="email" value={email} onChange={(e)=>setEmail(e.value)} className='p-2 lg:p-5 bg-transparent border-2 border-slate-700 dark:border-slate-300 rounded-md outline-none placeholder:text-slate-900 dark:placeholder:text-slate-300' required placeholder="Email" name="email"/>
+            <textarea rows={8} value={text} onChange={(e)=>setText(e.value)} className='p-2 lg:p-5 bg-transparent border-2 border-slate-700 dark:border-slate-300 rounded-md outline-none placeholder:text-slate-900 dark:placeholder:text-slate-300' placeholder="Message" name="message"/>
+            <button disabled={isLoading} className='bg-orange-400 active:bg-orange-400 hover:bg-orange-500 disabled:bg-slate-600 rounded-md flex-1 p-2 lg:p-5'>{isLoading? "Submitting...": "Submit"}</button>
           </motion.form>
           <motion.div
-            className="absolute top-0 left-0 py-7 h-full w-full stroke-orange-500 z-10"
+            className="absolute top-0 left-0 flex justify-center py-7 h-full w-full stroke-orange-500 z-10"
             initial={{ opacity: 1,}}
             whileInView={{ opacity: 0,}}
             transition={{ delay: 3, duration: 1 }}
           >
-            <svg width="450px" height="450px" viewBox="-1 -1 35 35">
+            <svg className='w-[250px] h-[250px] lg:w-[450px] lg:h-[450px]'  viewBox="-1 -1 35 35">
               <motion.path
                 strokeWidth={0.7}
                 fill="none"
-                initial={{ pathLength: 0 }}
-                animate={isInView && { pathLength: 1 }}
-                transition={{ duration: 3 }}
+                initial="initial"
+                animate={isInView && "animate"}
+                variants={pathVariants}
                 d="M28.189,16.504h-1.666c0-5.437-4.422-9.858-9.856-9.858l-0.001-1.664C23.021,4.979,28.189,10.149,28.189,16.504z
               M16.666,7.856L16.665,9.52c3.853,0,6.983,3.133,6.981,6.983l1.666-0.001C25.312,11.735,21.436,7.856,16.666,7.856z M16.333,0
               C7.326,0,0,7.326,0,16.334c0,9.006,7.326,16.332,16.333,16.332c0.557,0,1.007-0.45,1.007-1.006c0-0.559-0.45-1.01-1.007-1.01
