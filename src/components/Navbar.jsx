@@ -21,7 +21,7 @@ const Navbar = () => {
     
     const handleNav = (state) =>{
         const typeState = typeof state;
-        const defineState = state?.title.toLowerCase();
+        const defineState = state?.title?.toLowerCase();
         if(typeState === 'string'){
             setNavigation('home');
             scrollInView('home');
@@ -36,7 +36,7 @@ const Navbar = () => {
     }
 
 return (
-<header className="fixed bottom-0 lg:top-0 left-0 w-full h-fit z-50 lg:bg-gradient-to-b from-white to-transparent dark:from-black/70 dark:to-transparent">
+<header className="fixed bottom-0 lg:top-0 left-0 w-full h-fit z-50"> {/* lg:bg-gradient-to-b from-white to-transparent dark:from-black/70 dark:to-transparent */}
     <div className="max-w-custom mx-auto">
 
     <DesktopNav navLinks={navLinks}

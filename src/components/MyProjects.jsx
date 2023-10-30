@@ -22,12 +22,10 @@ const MyProjects = () => {
             // Stop animation if the component is out of view
             entry.target.style.opacity = 0;
             entry.target.style.pointerEvents = 'none';
-            console.log('my project NOT in view');
           } else {
             // Restart animation if the component is in view
             entry.target.style.opacity = 1;
             entry.target.style.pointerEvents = 'auto';
-            console.log('my project in view');
           }
         });
       },

@@ -8,6 +8,7 @@ import useSectionObserver from '../hooks/useSectionObserver';
 
 const About = () => {
     const sectionRef = useSectionObserver('about');// this function will change the state of navigation when this component is in viewport
+    const sectio2nRef = useSectionObserver('about');
     
     const headingVariants = {
         initial: { y:100, opacity: 0},
@@ -46,14 +47,14 @@ return (<>
             </motion.div>
 
             <motion.div initial="initial" whileInView="animate"  variants={infoVariants} className='h-full col-span-2 flex flex-col md:justify-center gap-5 dark:text-white pb-5'>
-                <motion.h3 variants={infoVariants} className='font-semibold text-xl md:text-3xl'>ABOUT ME</motion.h3>
+                <motion.h3 variants={infoVariants} className='font-semibold text-xl md:text-3xl text-[#fca649]'>ABOUT ME</motion.h3>
                 <motion.h2 variants={infoVariants} className='leading-none text-3xl md:text-[3rem] font-bold'>PERSONAL DETAILS</motion.h2>
                 <motion.p variants={infoVariants} className='text-md italic md:text-lg lg:text-xl'>An aspiring front end developer and passionate about developing easy-to-use and easily adjust to various screen sizes application. My professional pursuits started in the telecommunications field where I’ve had an opportunity to experience the digital revolution and understand the complexities of technology.</motion.p>
             </motion.div>
         </motion.article>
     </section>
 
-   <section className='w-full min-h-screen flex flex-col justify-center pt-5 pb-16 lg:pt-20 gap-10 bg-gradient-to-tr from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200'>
+   <section ref={sectio2nRef} className='w-full min-h-screen flex flex-col justify-center pt-5 pb-16 lg:pt-20 gap-10 bg-gradient-to-tr from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200'>
 
     <SectionTitle className="delay-2000" param1='WHAT' param2='CAN I DO'/>
 

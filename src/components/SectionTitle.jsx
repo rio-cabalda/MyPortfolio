@@ -15,7 +15,8 @@ const SectionTitle = ({param1, param2}) => {
             initial="initial"
             whileInView="animate"
             variants={headingVariants} 
-            className=' block text-center text-3xl text-gray-700 md:text-5xl font-bold dark:text-white uppercase'>{param1} <span className='text-transparent bg-gradient-to-tr from-[#82d3e7] to-[#006d88] dark:from-[#44a1b6] dark:to-[#4eb7ce] bg-clip-text duration-500'>{param2}</span></motion.h2>
+            className=' block text-center text-3xl  md:text-5xl font-bold text-gray-700 dark:text-white uppercase'>{param1} <span className=' duration-500 text-[#f77f00]'>{param2}</span></motion.h2>
+            // text-gray-700 bg-gradient-to-tr from-[#82d3e7] to-[#006d88] dark:from-[#44a1b6] dark:to-[#4eb7ce] bg-clip-text 
   )
 }
 SectionTitle.propTypes = {
