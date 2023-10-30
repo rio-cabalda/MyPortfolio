@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useGlobalState from "../store/globalStateStore"
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import SectionTitle from './SectionTitle';
-import { motion, useAnimation, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import featured from '../data/featuredProject';
 import SingleProject from './SingleProject';
 import useSectionObserver from '../hooks/useSectionObserver';

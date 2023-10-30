@@ -29,9 +29,11 @@ const useSectionObserver = ( sectionName) => {
 
     return () => {
     if (sectionRef.current) {
+         //eslint-disable-next-line
         observer.unobserve(sectionRef.current);
     }
     };
+     //eslint-disable-next-line
 }, []);
 
 return sectionRef;
