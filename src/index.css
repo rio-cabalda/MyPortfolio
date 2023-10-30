@@ -25,6 +25,9 @@
         transform: translateX(-100%);
       }
     }
+    .asdad{
+      background-color: #efefef;
+    }
     
     /* Define the animation class */
     .animate-marquee {

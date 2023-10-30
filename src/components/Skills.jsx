@@ -8,15 +8,11 @@ const Skills = () => {
   const sectionRef = useSectionObserver('skills');
   
   const variants = {
-    initial: {scale: 0.2, opacity: 0 },
+    initial: {scale: 0, opacity: 0 },
     animate: {scale: 1, opacity: 1,
               transition:{
                 duration: 1,
-                type:"spring",
-                stiffness: 100,
-                dumping: 10,
                 staggerChildren: 0.3,
-                delayChildren:1,
     }}}
 
   return (

@@ -10,15 +10,16 @@ const ref = useRef();
 const isInView = useInView(ref, { margin: "-100px" });
 const formRef = useRef();
 const [isLoading, setIsLoading] = useState(false);
-const sectionRef = useSectionObserver('contact');// this function will change the state of navigation when this component is in viewport
+// this function will change the state of navigation when this component is in viewport
+const sectionRef = useSectionObserver('contact');
 
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [text, setText] = useState('');
 
 const variants = {
-  initial: {opacity: 0, y: 100},
-  animate: {opacity: 1, y: 0,
+  initial: {opacity: 0, scale: 0.2},
+  animate: {opacity: 1, scale: 1,
     transition: {
       duration: 0.5,
       staggerChildren: 0.3,
@@ -50,9 +51,10 @@ const sendEmail = (e) => {
 }
 
   return (
-    <section id="contact" ref={ref} className="px-4 w-full min-h-screen flex items-center dark:text-white  bg-gradient-to-br from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200">
-      <div ref={sectionRef} className="max-w-custom mx-auto w-full h-full grid grid-cols-1 lg:grid-cols-2">
-        <motion.div initial="initial" whileInView="animate" variants={variants} className="w-full h-full leading-none flex flex-col gap-5 lg:gap-10 text-center lg:text-left py-5">
+    <section id="contact" ref={ref} className="px-4 lg-custom:px-0 pt-10 lg:pb-0 lg:pt-20 w-full min-h-screen flex items-center dark:text-white  bg-gradient-to-br from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200">
+      <div ref={sectionRef} className="max-w-custom mx-auto w-full grid grid-cols-1 lg:grid-cols-2">
+
+        <motion.div initial="initial" whileInView="animate" variants={variants} className="w-full leading-none flex flex-col gap-5 lg:gap-10 text-center lg:text-left py-5">
           <motion.h1 variants={variants} className="text-5xl lg:text-8xl font-bold text-orange-400">Let&apos;s work <br />together</motion.h1>
           <div>
             <motion.h2 variants={variants} className="text-lg lg:text-2xl font-bold">Email</motion.h2>
@@ -109,10 +111,10 @@ const sendEmail = (e) => {
               C32.666,7.326,25.339,0,16.333,0z"
               />
             </svg>
-          </motion.div>
+          </motion.div> 
           
         </div>
-      </div>
+      </div> 
     </section>
   )
 }
