@@ -4,9 +4,11 @@ import laptop from '../assets/about/laptop.svg';
 import phone from '../assets/about/phone.svg';
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
+import useSectionObserver from '../hooks/useSectionObserver';
 
 const About = () => {
-
+    const sectionRef = useSectionObserver('about');// this function will change the state of navigation when this component is in viewport
+    
     const headingVariants = {
         initial: { y:100, opacity: 0},
         animate: { y:0, opacity: 1,
@@ -34,7 +36,7 @@ const About = () => {
             }}
     }
 return (<>
-    <section id="about" className="flex items-start w-full bg-gradient-to-br from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200">
+    <section ref={sectionRef} id="about" className="flex items-start w-full bg-gradient-to-br from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200">
         <motion.article 
         initial="initial" whileInView="animate" variants={headingVariants}
             className='max-w-custom w-full min-h-[80vh] mx-auto px-4 pt-10  lg:pb-0 lg:pt-20 gap-6 grid grid-cols-1 md:grid-cols-3 items-start'>
@@ -44,14 +46,14 @@ return (<>
             </motion.div>
 
             <motion.div initial="initial" whileInView="animate"  variants={infoVariants} className='h-full col-span-2 flex flex-col md:justify-center gap-5 dark:text-white pb-5'>
-                <motion.h3 variants={infoVariants} className='text-xl md:text-3xl'>ABOUT ME</motion.h3>
+                <motion.h3 variants={infoVariants} className='font-semibold text-xl md:text-3xl'>ABOUT ME</motion.h3>
                 <motion.h2 variants={infoVariants} className='leading-none text-3xl md:text-[3rem] font-bold'>PERSONAL DETAILS</motion.h2>
-                <motion.p variants={infoVariants} className='text-md md:text-lg'>An aspiring front end developer and passionate about developing easy-to-use and easily adjust to various screen sizes application. My professional pursuits started in the telecommunications field where I’ve had an opportunity to experience the digital revolution and understand the complexities of technology.</motion.p>
+                <motion.p variants={infoVariants} className='text-md italic md:text-lg lg:text-xl'>An aspiring front end developer and passionate about developing easy-to-use and easily adjust to various screen sizes application. My professional pursuits started in the telecommunications field where I’ve had an opportunity to experience the digital revolution and understand the complexities of technology.</motion.p>
             </motion.div>
         </motion.article>
     </section>
 
-   <section className='flex flex-col justify-center pt-5 pb-16 lg:pt-4 gap-10 w-full mx-auto bg-gradient-to-tr from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200'>
+   <section className='flex flex-col justify-center pt-5 pb-16 lg:pt-20 gap-10 w-full mx-auto bg-gradient-to-tr from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200'>
 
     <SectionTitle className="delay-2000" param1='WHAT' param2='CAN I DO'/>
 

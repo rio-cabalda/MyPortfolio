@@ -4,11 +4,13 @@ import avatar from '../assets/hero/avatar.png';
 import hand from '../assets/hero/hand.png';
 import { Facebook, Linkedin, Github } from "lucide-react";
 import useGlobalState from "../store/globalStateStore";
+import useSectionObserver from "../hooks/useSectionObserver";
 
 const Hero = () => {
   const controls = useAnimation();
   const waving = true;
   const {theme} = useGlobalState();
+  const sectionRef = useSectionObserver('home');// this function will change the state of navigation when this component is in viewport
 
   const wavingVariants = {
     initial: { rotate: 2 },
@@ -47,7 +49,7 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className='relative pt-0 pb-14 lg:pb-0 lg:pt-20 flex w-full min-h-screen overflow-hidden 
+    <section ref={sectionRef} id="home" className='relative pt-0 pb-14 lg:pb-0 lg:pt-20 flex w-full min-h-screen overflow-hidden 
     bg-gradient-to-tr from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200'>
 
       {/* Slider text */}

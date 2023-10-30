@@ -2,13 +2,15 @@ import { motion,useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
+import useSectionObserver from '../hooks/useSectionObserver';
 
 
 const Contact = () => {
-  const ref = useRef();
+const ref = useRef();
 const isInView = useInView(ref, { margin: "-100px" });
 const formRef = useRef();
 const [isLoading, setIsLoading] = useState(false);
+const sectionRef = useSectionObserver('contact');// this function will change the state of navigation when this component is in viewport
 
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
@@ -31,7 +33,6 @@ const pathVariants = {
     }
   }
 }
-  console.log(isInView);
 const sendEmail = (e) => {
   e.preventDefault();
   setIsLoading(true);
@@ -50,7 +51,7 @@ const sendEmail = (e) => {
 
   return (
     <section id="contact" ref={ref} className="px-4 w-full min-h-screen flex items-center dark:text-white  bg-gradient-to-br from-[#6261BC] to-[#d4ecfd] dark:from-[#8128F5] dark:to-[#593656] duration-200">
-      <div className="max-w-custom mx-auto w-full h-full grid grid-cols-1 lg:grid-cols-2">
+      <div ref={sectionRef} className="max-w-custom mx-auto w-full h-full grid grid-cols-1 lg:grid-cols-2">
         <motion.div initial="initial" whileInView="animate" variants={variants} className="w-full h-full leading-none flex flex-col gap-5 lg:gap-10 text-center lg:text-left py-5">
           <motion.h1 variants={variants} className="text-5xl lg:text-8xl font-bold text-orange-400">Let&apos;s work <br />together</motion.h1>
           <div>

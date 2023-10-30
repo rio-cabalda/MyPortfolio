@@ -2,7 +2,7 @@ import { Sun, Moon } from "lucide-react";
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
-const DesktopNav = ({navLinks,selectedLink,theme,handleNav,handleToggle}) => {
+const DesktopNav = ({navLinks,navigation,theme,handleNav,handleToggle}) => {
     const spring = {
         type: "spring",
         stiffness: 700,
@@ -47,7 +47,7 @@ const DesktopNav = ({navLinks,selectedLink,theme,handleNav,handleToggle}) => {
                     className="flex text-base tracking-widest ">
                 {navLinks.map((navLink,i) => (
                     <motion.li key={navLink.title} variants={variants} custom={i}>
-                        <a className={`z-50 uppercase font-semibold no-underline relative text-right inline-block px-4 py-2 mx-1  after:absolute after:w-3/4 after:origin-center after:bottom-0 after:left-1/2 after:-translate-x-[52%] after:h-[1.5px] after:bg-sky-400 after:transform ${selectedLink === navLink.title ? 'after:scale-x-100':'after:scale-x-0 hover:after:scale-x-100'} after:duration-300 after:rounded-full after:ease-in leading-none cursor-pointer`}
+                        <a className={`z-50 uppercase font-semibold no-underline relative text-right inline-block px-4 py-2 mx-1  after:absolute after:w-3/4 after:origin-center after:bottom-0 after:left-1/2 after:-translate-x-[52%] after:h-[1.5px] after:bg-sky-400 after:transform ${navigation === navLink.title ? 'after:scale-x-100':'after:scale-x-0 hover:after:scale-x-100'} after:duration-300 after:rounded-full after:ease-in leading-none cursor-pointer`}
                         onClick={()=>handleNav(navLink)}>
                             {navLink.title}</a>
                     </motion.li>
@@ -67,7 +67,7 @@ DesktopNav.propTypes = {
         title: PropTypes.string.isRequired,
     })
     ).isRequired,
-    selectedLink: PropTypes.string.isRequired,
+    navigation: PropTypes.string.isRequired,
     theme: PropTypes.string.isRequired,
     handleNav: PropTypes.func.isRequired,
     handleToggle: PropTypes.func.isRequired,

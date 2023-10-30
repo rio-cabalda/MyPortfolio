@@ -1,16 +1,15 @@
+import { useEffect } from "react";
 import useGlobalState from "../store/globalStateStore"
-import { useState } from "react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import { Home,Info,Laptop2, Lightbulb,UserSquare } from 'lucide-react';
 
 const Navbar = () => {
-    const {theme, setTheme} = useGlobalState();
-    const [selectedLink, setSelectedLink] = useState('home');
+    const {theme, setTheme, navigation, setNavigation} = useGlobalState();
     const navLinks = [
         {title:'home', icon:Home},
         {title:'about',icon:Info},
-        {title:'projects',icon:Laptop2}, 
+        {title:'projects',icon:Laptop2},
         {title:'skills',icon:Lightbulb},
         {title:'contact',icon:UserSquare}];
 
@@ -25,11 +24,11 @@ const Navbar = () => {
         const typeState = typeof state;
         const defineState = state?.title.toLowerCase();
         if(typeState === 'string'){
-            setSelectedLink('home');
+            setNavigation('home');
             scrollInView('home');
         }           
         else{
-            setSelectedLink(defineState);
+            setNavigation(defineState);
             scrollInView(defineState);
         }}
             
@@ -42,14 +41,14 @@ return (
     <div className="max-w-custom mx-auto">
 
     <DesktopNav navLinks={navLinks}
-                selectedLink={selectedLink}
+                navigation={navigation}
                 theme={theme}
                 handleNav={handleNav}
                 handleToggle={handleToggle}
                 />
 
     <MobileNav navLinks={navLinks}
-                selectedLink={selectedLink}
+                navigation={navigation}
                 theme={theme}
                 handleNav={handleNav}
                 handleToggle={handleToggle} />

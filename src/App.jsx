@@ -38,7 +38,7 @@ function App() {
 
 
   return (
-    <main className="font-custom-fontFamily text-[#272525] min-h-screen duration-300">
+    <main className="font-custom-fontFamily text-gray-700 min-h-screen duration-300">
       <ToastContainer position="top-center" />
           <Navbar />
           <Hero />

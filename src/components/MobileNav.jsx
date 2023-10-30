@@ -3,8 +3,7 @@ import { Sun, Moon } from "lucide-react";
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
-const MobileNav = ({navLinks,selectedLink,theme,handleNav,handleToggle}) => {
-
+const MobileNav = ({navLinks,navigation,theme,handleNav,handleToggle}) => {
     const variants = {
         initial: {y:100},
         animate: (i) => ({y:0,
@@ -20,7 +19,7 @@ return (
     <motion.ul initial="initial" animate="animate" variants={variants} className='w-full h-full grid grid-cols-6'>
         {navLinks.map((link,i) => (
             <motion.li variants={variants} custom={i} key={link.title} 
-            className={`flex flex-col justify-center items-center gap-1 ${selectedLink === link.title? "text-violet-800 dark:text-violet-600 bg-slate-300 dark:bg-slate-700": "text-slate-500 dark:text-slate-600"} cursor-pointer`}
+            className={`flex flex-col justify-center items-center gap-1 ${navigation === link.title? "text-violet-800 dark:text-violet-600 bg-slate-300 dark:bg-slate-700": "text-slate-500 dark:text-slate-600"} cursor-pointer duration-500`}
             onClick={()=>handleNav(link)}
             >
                 {React.createElement(link.icon,{className: "w-6 h-6"})} 
@@ -44,7 +43,7 @@ MobileNav.propTypes = {
         icon: PropTypes.object.isRequired,
     })
     ).isRequired,
-    selectedLink: PropTypes.string.isRequired,
+    navigation: PropTypes.string.isRequired,
     theme: PropTypes.string.isRequired,
     handleNav: PropTypes.func.isRequired,
     handleToggle: PropTypes.func.isRequired,
