@@ -95,20 +95,20 @@ const HeroMobile = () => {
     <motion.ul 
     initial="initial" animate="animate" variants={socialVariants} 
     className="flex flex-col gap-2">
-        <motion.li
-        variants={socialVariants} 
-        className="w-10 h-10 flex justify-center items-center bg-[#28282B] dark:bg-white rounded-full hover:scale-110 active:scale-90 duration-300">
-        <a href="https://www.facebook.com/rjcabalda" rel="noreferrer" target="_blank" > <Facebook className="-translate-x-[1px]" size={25} color={theme === 'light'?'#fff':'#000000'} strokeWidth={1}/></a>
-        </motion.li>
         <motion.li 
         variants={socialVariants}
         className="w-10 h-10 flex justify-center items-center bg-[#28282B] dark:bg-white rounded-full p-2 hover:scale-110 active:scale-90 duration-300">
-        <a href="www.linkedin.com/in/rio-joy-cabalda-5457b2269" rel="noreferrer" target="_blank" > <Linkedin size={25} color={theme === 'light'?'#fff':'#000'} strokeWidth={1}/> </a> 
+        <a href="https://www.linkedin.com/in/riojoy-cabalda" rel="noreferrer" target="_blank" > <Linkedin size={25} color={theme === 'light'?'#fff':'#000'} strokeWidth={1}/> </a> 
         </motion.li >
         <motion.li 
         variants={socialVariants}
         className="w-10 h-10 flex justify-center items-center bg-[#28282B] dark:bg-white rounded-full p-2 hover:scale-110 active:scale-90 duration-300">
         <a href="https://github.com/rio-cabalda" rel="noreferrer" target="_blank" > <Github size={25} color={theme === 'light'?'#fff':'#000'} strokeWidth={1}/> </a>
+        </motion.li>
+        <motion.li
+        variants={socialVariants} 
+        className="w-10 h-10 flex justify-center items-center bg-[#28282B] dark:bg-white rounded-full hover:scale-110 active:scale-90 duration-300">
+        <a href="https://www.facebook.com/rjcabalda" rel="noreferrer" target="_blank" > <Facebook className="-translate-x-[1px]" size={25} color={theme === 'light'?'#fff':'#000000'} strokeWidth={1}/></a>
         </motion.li>
     </motion.ul>
     </aside>
