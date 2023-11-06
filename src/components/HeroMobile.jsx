@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { motion,useAnimation  } from "framer-motion";
 import avatar from '../assets/hero/avatar.png';
 import hand from '../assets/hero/hand.png';
-import { Facebook, Linkedin, Github } from "lucide-react";
+import { Facebook, Linkedin, Github,ArrowBigDownDash } from "lucide-react";
 import useGlobalState from "../store/globalStateStore";
+import CV from '../assets/file/CV.pdf';
 
 const HeroMobile = () => {
     const controls = useAnimation();
@@ -95,6 +96,19 @@ const HeroMobile = () => {
     <motion.ul 
     initial="initial" animate="animate" variants={socialVariants} 
     className="flex flex-col gap-2">
+        <motion.li 
+        variants={socialVariants}
+        className="relative w-10 h-10 flex justify-center items-center bg-[#28282B] dark:bg-white rounded-full p-2 hover:scale-110 active:scale-90 overflow-hidden duration-300">
+        <a className="font-bold flex justify-center items-center" href={CV} download="Cabalda-CV" >
+          <span className="w-full h-1/2 text-center bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">CV</span>
+          <motion.div className="z-20"initial={{ y: 1 }}
+            animate={{ y: 40 }}
+            transition={{ duration: 1, repeat: Infinity }}>
+            <ArrowBigDownDash />
+          </motion.div>
+          
+          </a> 
+        </motion.li >
         <motion.li 
         variants={socialVariants}
         className="w-10 h-10 flex justify-center items-center bg-[#28282B] dark:bg-white rounded-full p-2 hover:scale-110 active:scale-90 duration-300">
