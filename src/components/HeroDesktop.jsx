@@ -2,7 +2,7 @@ import { Facebook, Linkedin, Github } from "lucide-react";
 import useGlobalState from "../store/globalStateStore";
 import avatar from '../assets/hero/avatar.png';
 import { motion } from "framer-motion";
-import CV from '../assets/file/CV.pdf'
+import CV from '../assets/file/CV.pdf';
 const HeroContent = () => {
     const {theme} = useGlobalState();
 
