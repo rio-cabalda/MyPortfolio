@@ -24,15 +24,15 @@ const HeroContent = () => {
 return (
     <article className="hidden lg:flex gap-20 max-w-custom w-full mx-auto dark:text-slate-200 z-10">
         <div className="flex w-full items-center justify-end">
-            <motion.div initial="initial" animate="animate" variants={titleVariants} className="flex flex-col justify-center gap-1 origin-left">
+            <motion.div initial="initial" animate="animate" variants={titleVariants} className="flex flex-col justify-center gap-1 origin-center">
                 <motion.h3 variants={titleVariants} className="text-4xl tracking-[0.5rem] font-semibold">hello!</motion.h3>
                 <motion.h1 variants={titleVariants} className="text-8xl leading-none font-bold text-black dark:text-white">I&apos;m Rio</motion.h1>
                 <motion.p variants={titleVariants} className="text-2xl font-bold tracking-[0.7rem] text-[#0450AB] dark:text-[#fcbf49]  shadow-slate-400 text-shadow-sm">front-end developer</motion.p>
 
-            <div  className="flex mt-10 gap-5">
-                <a href={CV} download="Cabalda-CV">
+            <div className="flex mt-10 gap-5">
+                <motion.a initial={{scale:0.2, opacity: 0}} animate={{scale:1, opacity: 1}} transition={{duration:1, delay:1.5}} href={CV} download="Cabalda-CV">
                     <button className="rounded-full px-4 py-2 bg-[#f77f00] dark:bg-[#f77f00] text-black shadow-md shadow-slate-700">Download CV</button>
-                </a>
+                </motion.a>
                 <motion.div initial="initial" animate="animate" variants={socialVariants} className="flex gap-2">
                     <motion.div variants={socialVariants} className="w-10 h-10 flex justify-center items-center bg-[#28282B] dark:bg-white rounded-full p-2 hover:scale-110 active:scale-90 shadow-md shadow-slate-700 duration-300">
                         <a href="https://www.linkedin.com/in/riojoy-cabalda" rel="noreferrer" target="_blank" > <Linkedin size={25} color={theme === 'light'?'#fff':'#000'} strokeWidth={1}/> </a> 
