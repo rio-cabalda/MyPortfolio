@@ -10,7 +10,7 @@ const  featured = [
     title: "BestiesPom Petshop App",
     github: "https://github.com/rio-cabalda/besties-pom",
     live: "https://bestiespom.netlify.app",
-    stack: ["React","Tailwind","Zustand","React Query", "Express JS"],
+    stack: ["React","TypeScript","Tailwind","Zustand","React Query", "Express JS"],
     description: "BestiesPom Petshop is a pet care and management application designed to make the lives of pet owners easier and the experiences of their furry friends more enjoyable. Whether you're a devoted dog owner or a cat enthusiast, our app provides a convenient platform to manage your pet's needs, health, and overall well-being."
 },
 {
