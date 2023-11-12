@@ -1,7 +1,18 @@
 import PropTypes from 'prop-types';
 import {motion } from 'framer-motion';
 
+function extractString(filePath) {
+    // Split the file path by "/"
+   const pathParts = filePath.split('/');
+   const pathLength = pathParts.length - 1;
+   // Get the fourth element (index 3) and extract the file name without extension
+   const fileNameWithExtension = pathParts[pathLength];
+   return 'Cabalda_'+fileNameWithExtension;
+ }
+
 const SingleCertificate = ({image, title, certLink, download,topics}) => {
+    const fileName = extractString(download);
+    console.log(fileName);
     const variants = {
         initial: { opacity: 0},
         animate: { opacity: 1,
@@ -11,14 +22,7 @@ const SingleCertificate = ({image, title, certLink, download,topics}) => {
             }}
     }
 
-function extractString(filePath) {
-   // Split the file path by "/"
-  const pathParts = filePath.split('/');
-  const pathLength = pathParts.length - 1;
-  // Get the fourth element (index 3) and extract the file name without extension
-  const fileNameWithExtension = pathParts[pathLength];
-  return 'Cabalda_'+fileNameWithExtension;
-}
+
 
 
 return (
