@@ -1,17 +1,23 @@
 import PropTypes from 'prop-types';
 import {motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
-function extractString(filePath) {
-    // Split the file path by "/"
-   const pathParts = filePath.split('/');
-   const pathLength = pathParts.length - 1;
-   // Get the fourth element (index 3) and extract the file name without extension
-   const fileNameWithExtension = pathParts[pathLength];
-   return 'Cabalda_'+fileNameWithExtension;
- }
+
 
 const SingleCertificate = ({image, title, certLink, download,topics}) => {
-    const fileName = extractString(download);
+    const [fileName, setFileName] = useState('Cabalda_Certificate');
+    useEffect(()=>{
+        function extractString(filePath) {
+        // Split the file path by "/"
+        const pathParts = filePath.split('/');
+        const pathLength = pathParts.length - 1;
+        // Get the fourth element (index 3) and extract the file name without extension
+        const fileNameWithExtension = pathParts[pathLength];
+        return 'Cabalda_'+fileNameWithExtension;
+        }
+        setFileName(extractString(download));
+        //eslint-disable-next-line
+    },[]);
     console.log(fileName);
     const variants = {
         initial: { opacity: 0},
@@ -43,7 +49,7 @@ return (
                     <motion.div variants={variants} className='flex flex-col gap-2 lg:gap-5 text-xs lg:text-lg'>
                         <motion.div variants={variants} className='flex justify-center lg:justify-start py-3 gap-5 uppercase tracking-tighter'>
                         <motion.a variants={variants} href={certLink} target='_blank' rel="noreferrer" className='flex items-center font-bold leading-none gap-2 border-b-2 border-black dark:border-white pb-2'>Certificate URL</motion.a>
-                        <motion.a variants={variants} href={download} download={extractString(`${download}`)} target='_blank' rel="noreferrer" className='flex items-center font-bold leading-none gap-2 border-b-2 border-black dark:border-white pb-2 '>Download Certificate</motion.a>
+                        <motion.a variants={variants} href={download} download={fileName} className='flex items-center font-bold leading-none gap-2 border-b-2 border-black dark:border-white pb-2 '>Download Certificate</motion.a>
                         </motion.div>
                     </motion.div>
                 </motion.div>
