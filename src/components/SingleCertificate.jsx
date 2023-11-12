@@ -18,7 +18,6 @@ const SingleCertificate = ({image, title, certLink, download,topics}) => {
         setFileName(extractString(download));
         //eslint-disable-next-line
     },[]);
-    console.log(fileName);
     const variants = {
         initial: { opacity: 0},
         animate: { opacity: 1,
