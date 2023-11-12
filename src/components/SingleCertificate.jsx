@@ -14,11 +14,10 @@ const SingleCertificate = ({image, title, certLink, download,topics}) => {
 function extractString(filePath) {
    // Split the file path by "/"
   const pathParts = filePath.split('/');
-
+  const pathLength = pathParts.length - 1;
   // Get the fourth element (index 3) and extract the file name without extension
-  const fileNameWithoutExtension = pathParts[4];
-  console.log(filePath);
-  return 'Cabalda_'+fileNameWithoutExtension;
+  const fileNameWithExtension = pathParts[pathLength];
+  return 'Cabalda_'+fileNameWithExtension;
 }
 
 
