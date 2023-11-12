@@ -1,7 +1,7 @@
 import useGlobalState from "../store/globalStateStore"
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
-import { Home,Info,Laptop2, Lightbulb,UserSquare } from 'lucide-react';
+import { Home,Info,Laptop2, Lightbulb,UserSquare,ScrollText } from 'lucide-react';
 
 const Navbar = () => {
     const {theme, setTheme, navigation, setNavigation} = useGlobalState();
@@ -9,9 +9,9 @@ const Navbar = () => {
         {title:'home', icon:Home},
         {title:'about',icon:Info},
         {title:'projects',icon:Laptop2},
+        {title:'certificates',icon:ScrollText},
         {title:'skills',icon:Lightbulb},
         {title:'contact',icon:UserSquare}];
-
     const scrollInView =(elementID)=>{
         const element = document.getElementById(elementID);
             if (element) {

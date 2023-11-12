@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Certificates from "./components/Certificates";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Hero />
           <About />
           <MyProjects />
+          <Certificates />
           <Skills />
           <Contact /> 
     </main>
