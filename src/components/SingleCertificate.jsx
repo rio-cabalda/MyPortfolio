@@ -17,7 +17,7 @@ function extractString(filePath) {
 
   // Get the fourth element (index 3) and extract the file name without extension
   const fileNameWithoutExtension = pathParts[4];
-  console.log(fileNameWithoutExtension);
+  console.log(filePath);
   return 'Cabalda_'+fileNameWithoutExtension;
 }
 
