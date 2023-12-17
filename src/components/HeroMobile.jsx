@@ -100,7 +100,7 @@ const HeroMobile = () => {
         variants={socialVariants}
         className="relative w-10 h-10 flex justify-center items-center bg-[#28282B] dark:bg-white rounded-full p-2 hover:scale-110 active:scale-90 overflow-hidden duration-300">
         <a className=" flex justify-center items-center" href={CV} download="Cabalda-CV" >
-          <span className="w-full h-1/2 text-center bg-[#28282B] text-white dark:text-black dark:bg-white absolute top-0 left-1/2 -translate-x-1/2 translate-y-[45%] z-30 font-bold">CV</span>
+          <span className="w-fit h-1/2 text-center bg-[#28282B] text-white dark:text-black dark:bg-white absolute top-0 left-1/2 -translate-x-1/2 translate-y-[45%] z-30 font-bold">CV</span>
           <motion.div className="z-20"initial={{ y: 1 }}
             animate={{ y: 40 }}
             transition={{ duration: 1, repeat: Infinity }}>
